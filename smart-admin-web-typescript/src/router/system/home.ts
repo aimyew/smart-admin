@@ -10,8 +10,9 @@
 import { HOME_PAGE_NAME } from '/@/constants/system/home-const';
 import { MENU_TYPE_ENUM } from '/@/constants/system/menu-const';
 import SmartLayout from '/@/layout/index.vue';
+import { RouteRecordRaw } from 'vue-router';
 
-export const homeRouters:Array<RouteRecordRaw> = [
+export const homeRouters: Array<RouteRecordRaw> = [
   {
     path: '/',
     name: '_home',
@@ -32,7 +33,7 @@ export const homeRouters:Array<RouteRecordRaw> = [
           icon: 'HomeOutlined',
           parentMenuList: [{ name: '_home', title: '首页' }],
         },
-        component: () => import('/@/views/system/home/index.vue'),
+        component: () => import('/@/views/system/home/index_new.vue'),
       },
       {
         path: '/account',

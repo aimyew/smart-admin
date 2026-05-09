@@ -14,17 +14,18 @@ module.exports = {
   },
   parser: 'vue-eslint-parser', //使用vue-eslint-parser 来解析vue文件中的 template和script
   parserOptions: {
+    parser: '@typescript-eslint/parser', // 让 ESLint 使用 TypeScript 解析器
     ecmaVersion: 12, // 默认情况下，ESLint使用的是ECMAScript5语法，此处我们设置的选项是 es12
     sourceType: 'module', // 指定js导入的方式
   },
-  extends: ['plugin:vue/vue3-essential', 'eslint:recommended', 'plugin:vue/base', 'prettier'],
+  extends: ['plugin:vue/vue3-essential', 'eslint:recommended', 'plugin:@typescript-eslint/recommended', 'prettier'],
   globals: {
     defineProps: 'readonly',
     defineEmits: 'readonly',
     defineExpose: 'readonly',
     withDefaults: 'readonly',
   },
-  plugins: ['vue', 'prettier'],
+  plugins: ['vue', '@typescript-eslint', 'prettier'],
   rules: {
     'no-unused-vars': [
       'error',

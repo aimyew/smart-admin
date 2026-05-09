@@ -101,8 +101,8 @@
 
   const loginForm = reactive({
     loginName: 'admin',
-    password: '',
-    captchaCode: '',
+    password: '123456',
+    captchaCode: 'aa',
     captchaUuid: '',
     loginDevice: LOGIN_DEVICE_ENUM.PC.value,
   });
@@ -148,7 +148,7 @@
         const dictRes = await dictApi.getAllDictData();
         useDictStore().initData(dictRes.data);
         //构建系统的路由
-        buildRoutes();
+        buildRoutes(null);
         router.push('/home');
       } catch (e) {
         if (e.data && e.data.code !== 0) {
